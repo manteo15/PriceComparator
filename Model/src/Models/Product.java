@@ -12,15 +12,15 @@ enum PackageUnit{
 public class Product {
     private String id;
     private String name;
-    private int categoryId;
+    private String category;
     private String brand;
     private float quantity;
     private PackageUnit unit;
 
-    public Product(String id, String name, int categoryId, String brand, float quantity, PackageUnit unit) {
+    public Product(String id, String name, String category, String brand, float quantity, PackageUnit unit) {
         this.id = id;
         this.name = name;
-        this.categoryId = categoryId;
+        this.category = category;
         this.brand = brand;
         this.quantity = quantity;
         this.unit = unit;
@@ -42,12 +42,12 @@ public class Product {
         this.name = name;
     }
 
-    public int getCategoryId() {
-        return categoryId;
+    public String getCategory() {
+        return category;
     }
 
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getBrand() {

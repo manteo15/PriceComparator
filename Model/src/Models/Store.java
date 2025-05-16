@@ -21,6 +21,11 @@ public class Store {
         this.futureProductDiscounts = futureProductDiscounts;
     }
 
+    public Store(String name) {
+        this.name = name;
+        setId(++count);
+    }
+
     public int getId() {
         return id;
     }

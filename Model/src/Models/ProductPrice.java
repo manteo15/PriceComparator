@@ -10,16 +10,18 @@ public class ProductPrice {
     private int id;
     private static int count = 0;
     private String productId;
+    private int storeId;
     private float price;
     private Currency currency;
     private Date date;
 
-    public ProductPrice(String productId, float price, Currency currency, Date date) {
+    public ProductPrice(String productId, float price, Currency currency, Date date, int storeId) {
         setId(++count);
         this.productId = productId;
         this.price = price;
         this.currency = currency;
         this.date = date;
+        this.storeId = storeId;
     }
 
     public int getId() {
@@ -60,5 +62,13 @@ public class ProductPrice {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public int getStoreId() {
+        return storeId;
+    }
+
+    public void setStoreId(int storeId) {
+        this.storeId = storeId;
     }
 }
