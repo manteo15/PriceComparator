@@ -1,10 +1,8 @@
 package Models;
 
-import java.util.Date;
+import Models.Enums.Currency;
 
-enum Currency{
-    RON
-}
+import java.util.Date;
 
 public class ProductPrice {
     private int id;

@@ -44,7 +44,8 @@ public class ProductPriceRepository implements IProductPriceRepository {
         return productPrices;
     }
 
-    private boolean exists(ProductPrice productPrice){
+    @Override
+    public boolean exists(ProductPrice productPrice){
         for(ProductPrice pp:productPrices){
             if(pp.getStoreId() == productPrice.getStoreId() && pp.getProductId().equals(productPrice.getProductId()) &&
                     pp.getDate() == productPrice.getDate()){

@@ -1,6 +1,8 @@
 package Repositories;
 
 import Interfaces.IStoreRepository;
+import Models.ProductDiscount;
+import Models.ProductPrice;
 import Models.Store;
 
 import java.util.ArrayList;
@@ -27,6 +29,62 @@ public class StoreRepository implements IStoreRepository {
         if(store != null){
             stores.remove(store);
         }
+    }
+
+    @Override
+    public void addCurrentProductPrices(List<ProductPrice> productPrices, int storeId) {
+        Store store = getById(storeId);
+
+        if(store != null){
+            store.setCurrentProductPrices(productPrices);
+        }
+    }
+
+    @Override
+    public void addFutureProductPrices(List<ProductPrice> productPrices, int storeId) {
+        Store store = getById(storeId);
+
+        if(store != null){
+            store.setFutureProductPrices(productPrices);
+        }
+    }
+
+    @Override
+    public void addCurrentProductDiscounts(List<ProductDiscount> productDiscounts, int storeId) {
+        Store store = getById(storeId);
+
+        if(store != null){
+            store.setCurrentProductDiscounts(productDiscounts);
+        }
+    }
+
+    @Override
+    public void addFutureProductDiscounts(List<ProductDiscount> productDiscounts, int storeId) {
+        Store store = getById(storeId);
+
+        if(store != null){
+            store.setFutureProductDiscounts(productDiscounts);
+        }
+    }
+
+    @Override
+    public boolean exists(String storeName) {
+        for(Store s:stores){
+            if(s.getName().equals(storeName)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public int getId(String storeName) {
+        for(Store s:stores){
+            if(s.getName().equals(storeName)){
+                return s.getId();
+            }
+        }
+        return -1;
     }
 
     @Override

@@ -45,7 +45,8 @@ public class ProductDiscountRepository implements IProductDiscountRepository {
         return productDiscounts;
     }
 
-    private boolean exists(ProductDiscount productDiscount){
+    @Override
+    public boolean exists(ProductDiscount productDiscount){
         for(ProductDiscount pd:productDiscounts){
             if(pd.getStoreId() == productDiscount.getStoreId() && pd.getProductId().equals(productDiscount.getProductId()) &&
                     pd.getFromDate() == productDiscount.getFromDate() && pd.getToDate() == productDiscount.getToDate()){

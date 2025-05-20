@@ -30,6 +30,16 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
+    public boolean exists(String productId) {
+        for(Product p:products){
+            if(p.getId().equals(productId)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
     public Product getById(String productId) {
         for(Product p:products){
             if(p.getId().equals(productId)){

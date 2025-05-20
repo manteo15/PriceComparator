@@ -1,13 +1,6 @@
 package Models;
 
-enum PackageUnit{
-    g,
-    kg,
-    l,
-    ml,
-    buc,
-    role
-}
+import Models.Enums.PackageUnit;
 
 public class Product {
     private String id;
